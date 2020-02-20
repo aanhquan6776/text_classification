@@ -67,7 +67,7 @@ if args.mode == "train-test":
     print("Training model")
     t0 = time()
 
-    transformer = Doc2Vec(vector_size=1024, dm=0, negative=5, min_count=2, workers=4, window=5, alpha=0.025, min_alpha=0.001, iter=100000)
+    transformer = Doc2Vec(vector_size=1024, dm=0, negative=5, min_count=2, workers=4, window=5, alpha=0.025, min_alpha=0.001, iter=1000000)
 
     # total_epoch = 30
     transformer.build_vocab(train_tagged)
