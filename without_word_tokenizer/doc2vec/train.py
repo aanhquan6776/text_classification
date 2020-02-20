@@ -40,7 +40,7 @@ def vec_for_learning(model, tagged_docs):
 
 if args.mode == "train-test":
     if not (args.train and args.test):
-        parser.error("Mode train-test requires -- train and --test")
+        parser.error("Mode train-test requires --train and --test")
     if not args.s:
         parser.error("Mode train_test requires --s")
     train_path = os.path.abspath(args.train)
@@ -67,12 +67,12 @@ if args.mode == "train-test":
     print("Training model")
     t0 = time()
 
-    transformer = Doc2Vec(vector_size=1024, dm=1, negative=5, min_count=2, workers=4, window=5, alpha=0.025, min_alpha=0.001, iter=10)
+    transformer = Doc2Vec(vector_size=300, dm=0, dbow_words=1, negative=2, min_count=2, workers=4, window=2, iter=20)
 
     # total_epoch = 30
     transformer.build_vocab(train_tagged)
 
-    transformer.train(train_tagged, total_examples=transformer.corpus_count, epochs=transformer.epochs)
+    transformer.train(train_tagged, total_examples=transformer.corpus_count, epochs=transformer.iter)
 
     print("finish training doc2vec")
 

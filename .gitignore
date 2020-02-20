@@ -132,4 +132,3 @@ dmypy.json
 # my files
 **/models/**
 **/data/**
-!/data
