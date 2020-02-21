@@ -1,0 +1,10 @@
+vector_size,dm,dbow_words,negative,min_count,window,iter,accuracy,precision,recall,f1_score
+vector_size,dm,dbow_words,negative,min_count,window,iter,accuracy,precision,recall,f1_score
+vector_size,dm,dbow_words,negative,min_count,window,iter,accuracy,precision,recall,f1_score
+vector_size,dm,dbow_words,negative,min_count,window,iter,accuracy,precision,recall,f1_score
+vector_size,dm,dbow_words,negative,min_count,window,iter,accuracy,precision,recall,f1_score
+vector_size,dm,dbow_words,negative,min_count,window,iter,accuracy,precision,recall,f1_score
+vector_size,dm,dbow_words,negative,min_count,window,iter,accuracy,precision,recall,f1_score
+vector_size,dm,dbow_words,negative,min_count,window,iter,accuracy,precision,recall,f1_score
+vector_size,dm,dbow_words,negative,min_count,window,iter,accuracy,precision,recall,f1_score
+300,0,0,1,2,2,10,89.9,89.9,89.9,89.9

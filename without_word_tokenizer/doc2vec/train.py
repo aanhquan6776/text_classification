@@ -29,7 +29,6 @@ def save_model(filename, clf):
 
 def convert_to_tagged(data):
     result = [TaggedDocument(words=simple_preprocess(record[1]), tags=[record[0]]) for record in data]
-
     return result
 
 
@@ -45,9 +44,10 @@ if args.mode == "train-test":
         parser.error("Mode train_test requires --s")
     train_path = os.path.abspath(args.train)
     test_path = os.path.abspath(args.test)
-
-    print("Train model")
     model_path = os.path.abspath(args.s)
+    
+    print("Train model")
+    
     print("Load data")
     X_train, y_train = load_dataset(train_path)
     X_test, y_test = load_dataset(test_path)
@@ -67,7 +67,7 @@ if args.mode == "train-test":
     print("Training model")
     t0 = time()
 
-    transformer = Doc2Vec(vector_size=300, dm=0, dbow_words=1, negative=2, min_count=2, workers=4, window=2, iter=20)
+    transformer = Doc2Vec(vector_size=300, dm=0, dbow_words=1, negative=5, min_count=2, workers=4, window=2, iter=10)
 
     # total_epoch = 30
     transformer.build_vocab(train_tagged)
